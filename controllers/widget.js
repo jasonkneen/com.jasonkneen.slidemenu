@@ -1,6 +1,7 @@
 // vars required to capture parent view and a blocker
 // that covers the parent view to avoid clicks when menu is open
 var parentView, blocker;
+var screenWidth =  Ti.Platform.displayCaps.platformWidth / (Ti.Platform.displayCaps.dpi / 160);
 
 // initialise some settings based on OS / version
 $.header.height = Ti.Platform.version.split(".")[0] == 7 ? 64 : 45;
@@ -73,7 +74,7 @@ $.getView().open();
 function toggleMenu() {
 	
 	parentView.getView().applyProperties({
-		width :  Ti.Platform.displayCaps.platformWidth / (Ti.Platform.displayCaps.dpi / 160)// TODO need to cache this
+		width :  screenWidth
 	});
 
 	if (parentView.getView().slid) {
