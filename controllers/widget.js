@@ -1,7 +1,8 @@
 // vars required to capture parent view and a blocker
 // that covers the parent view to avoid clicks when menu is open
-var parentView, blocker;
+var parentView, blocker, slid;
 var screenWidth =  Ti.Platform.displayCaps.platformWidth / (Ti.Platform.displayCaps.dpi / 160);
+
 
 // initialise some settings based on OS / version
 $.header.height = Ti.Platform.version.split(".")[0] == 7 ? 64 : 45;
@@ -9,7 +10,7 @@ $.title.top = Ti.Platform.version.split(".")[0] == 7 ? 30 : 12;
 $.table.top = Ti.Platform.version.split(".")[0] == 7 ? 65 : 46;
 
 // init - called from the parent controller passing
-// the host view. 
+// the host view.
 // 		args.parent
 //		args.menuTitle
 exports.init = function(args) {
@@ -17,7 +18,11 @@ exports.init = function(args) {
 	$.title.text = args.menuTitle || $.title.text;
 };
 
-// add a menu item with: - 
+exports.setParent = function(controller){	
+	parentView = controller;
+};
+
+// add a menu item with: -
 //		args.icon = path to image
 // 		args.title = text
 //		args.onClick = callback on click
@@ -26,8 +31,8 @@ exports.addMenuItem = function(args) {
 	var row = Ti.UI.createTableViewRow({
 		backgroundSelectedColor : "#AAA",
 		selectedBackgroundColor : "#AAA",
-		height: 35,
-		className: "menuItem"
+		height : 35,
+		className : "menuItem"
 	});
 
 	var label = Ti.UI.createLabel({
@@ -40,16 +45,16 @@ exports.addMenuItem = function(args) {
 	});
 
 	var icon = Ti.UI.createImageView({
-		image: args.icon,
+		image : args.icon,
 		left : 15,
 		width : 20
 	});
 
 	row.add(icon);
 	row.add(label);
-	
-	row.addEventListener("click", function(){		
-		if (typeof args.onClick === "function") {
+
+	row.addEventListener("click", function() {
+		if ( typeof args.onClick === "function") {
 			args.onClick();
 		}
 	});
@@ -72,19 +77,19 @@ $.getView().open();
 
 // function to open / close menu
 function toggleMenu() {
-	
+
 	parentView.getView().applyProperties({
-		width :  screenWidth
+		width : screenWidth
 	});
 
-	if (parentView.getView().slid) {
+	if (slid) {
 
 		parentView.getView().animate({
 			left : 0,
-			duration : 100,			
+			duration : 100,
 		});
-		
-		parentView.getView().slid = false;
+
+		slid = false;
 		blocker.parent.remove(blocker);
 
 	} else {
@@ -97,7 +102,7 @@ function toggleMenu() {
 			duration : 100,
 			//opacity : 0.7
 		});
-		parentView.getView().slid = true;
+		slid = true;
 		parentView.getView().add(blocker);
 	}
 }
