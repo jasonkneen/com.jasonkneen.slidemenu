@@ -73,7 +73,7 @@ $.getView().open();
 function toggleMenu() {
 	
 	parentView.getView().applyProperties({
-		width : 320
+		width : Ti.Platform.displayCaps.platformWidth // TODO need to cache this
 	});
 
 	if (parentView.getView().slid) {
