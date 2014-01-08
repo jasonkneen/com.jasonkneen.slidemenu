@@ -19,7 +19,12 @@ This is an Alloy 1.3 / Titanium 3.2 only widget currently.
 }
 ```
 
-* Add the widget to your first / primary window (note added twice here for iOS and Android):-
+* Ensure you have legacy support for lightweight windows in Ti 3.2
+```xml
+<property name="ti.android.useLegacyWindow" type="bool">true</property>
+```
+
+* Add the widget to your first / primary window (note added twice here for iOS and Android)
 
 ```xml
 <Alloy>
