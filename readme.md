@@ -6,7 +6,7 @@ This is an Alloy 1.3 / Titanium 3.2 only widget currently.
 
 ### NOTE: This is very much "work in progress" and I'm tweaking as I use this in current projects
 
-![TabFonts](https://raw.github.com/jasonkneen/images/master/tabfonts/tabfonts.png)
+![TabFonts](https://raw.github.com/jasonkneen/images/master/slidemenu/slidemenu.png)
 
 ## Quick Start
 * [Download the latest version](https://github.com/jasonkneen/com.jasonkneen.slidemenu) of the widget as a ZIP file.
@@ -50,7 +50,7 @@ $.slideMenu.init({
 	menuTitle : "My Menu"
 });
 
-* Add menu items as follows, each one containing it's callback:-
+// Add menu items as follows, each one containing it's callback
 
 $.menu.addMenuItem({
 	icon : "/530-scooter.png",
@@ -68,7 +68,7 @@ $.menu.addMenuItem({
 	}
 });
 
-* Finally, you can toggle the menu from your window using
+// Finally, you can toggle the menu from your window using
 
 $.menu.toggleMenu();
 ```
