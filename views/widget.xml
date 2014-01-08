@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="menu" visible="false">
+		<View id="header">
+			<Label id="title">Menu</Label>
+		</View>
+		<TableView id="table"/>
+		<View left="197" width="3" height="Ti.UI.FILL" backgroundColor="#000" opacity="0.1"/>
+	</Window>
+</Alloy>

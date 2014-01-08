@@ -1,0 +1,13 @@
+{
+	"id": "com.jasonkneen.slidemenu",
+	"name": "com.jasonkneen.slidemenu",
+	"description": "Slide out menu for iOS / Android",
+	"author": "Jason Kneen",
+	"version": "1.0",
+	"copyright": "Copyright (c) 2014",
+	"license": "Apache License, Version 2.0",
+	"min-alloy-version": "1.0",
+	"min-titanium-version": "3.2",
+	"tags": "tabs,tabgroup, navigation, menu, slide",
+	"platforms": "ios, android"
+}
