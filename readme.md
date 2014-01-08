@@ -73,6 +73,12 @@ $.menu.addMenuItem({
 	}
 });
 
+// If you're opening a new main window, and want to have a button on that which will toggle
+// the menu, then use the setParent method to reassign the window to be moved to the 
+// current one
+
+$.menu.setParent(controller) // make sure it's a controller!
+
 // Finally, you can toggle the menu from your window using
 
 $.menu.toggleMenu();
