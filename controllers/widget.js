@@ -73,7 +73,7 @@ $.getView().open();
 function toggleMenu() {
 	
 	parentView.getView().applyProperties({
-		width : Ti.Platform.displayCaps.platformWidth // TODO need to cache this
+		width :  Ti.Platform.displayCaps.platformWidth / (Ti.Platform.displayCaps.dpi / 160)// TODO need to cache this
 	});
 
 	if (parentView.getView().slid) {
